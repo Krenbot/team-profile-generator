@@ -14,4 +14,4 @@ const generateIntern = function () {
 
 
 
-module.exports = generateHTML
+// module.exports = generateHTML

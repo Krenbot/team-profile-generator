@@ -3,62 +3,81 @@ const inquirer = require('inquirer')
 const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
-const generateHTML = require('./src/generateHTML')
+// const generateHTML = require('./src/generateHTML')
+
+let employees = [];
 
 //Inquirer for MANAGER ?'s:
-//name, id, email, officeNumber
 const inqManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
             message: 'Enter MANAGER name:',
-
+        }, {
             type: 'input',
             name: 'id',
             message: "Enter the MANAGER\'S ID #:",
-
+        }, {
             type: 'input',
             name: 'email',
             message: 'Enter the MANAGER\'S e-mail:',
-
+        }, {
             type: 'input',
             name: 'officeNumber',
             message: 'Enter the MANAGER\'S office number:'
         }
     ])
+        .then((info) => {
+            let manager = new Manager(info.name, info.id, info.email, info.officeNumber)
+            employees.push(manager)
+            console.log(manager)
+            promptChoices()
+        })
 }
 
+const promptChoices = () => {
+    return inquirer.prompt([{
+        type: 'list',
+        message: 'What would you like to add?',
+        name: 'choices',
+        choices: ['Intern', 'Engineer', 'EXIT']
+    }
+    ])
+        .then((info) => {
+            console.log(info)
+            if (info.choices === 'Intern') {
+                //CALL INTERN FUNCTION HERE
+            } else if (info.choices === 'Engineer') {
+                //CALL ENGINEER FUNCTION HERE
+            } else {
+                return
+            }
+        })
+}
 
-//Inquirer for Engineer ?'s:
+const inqEngineer = () => {
 //name, id, email, github
 
-//Inquirer for Intern ?'s:
+//Push to employee array
+
+}
+
+const inqIntern = () => {
 //name, id, email, school
 
-//Array of questions for user input
-const questions = [
-    {
-        type: 'input',
-        message: 'What is your project\'s name?',
-        name: 'title'
-    },
-];
+//Push to employee array
 
-//Write INDEX.HTML file
+}
+
+//Send Array to HTML
+
+//Create HTML for individual roles
+
 function writeToFile(fileName, data) {
     fs.writeFileSync(
         `./dist/${fileName}`, data)
 }
 
-//Initialize app
-function init() {
-    return inquirer.prompt(questions)
-        .then((response) => {
-            console.log(response)
-            writeToFile('index.html', generateHTML(response))
-        })
-}
-
 // Function call to initialize app
-init();
+inqManager()

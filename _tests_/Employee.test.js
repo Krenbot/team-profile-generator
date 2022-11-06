@@ -2,15 +2,15 @@ const Employee = require('../lib/Employee')
 const employee = new Employee('Jeff', 5459, 'jeff@test.com')
 
 //Arrange 
-const name = employee.name
-const id = employee.id
-const email = employee.email
+const name = employee.getName()
+const id = employee.getId()
+const email = employee.getEmail()
 
 //Assert
 describe('Creates an employee object', () => {
 
     it('Should get an employee name', () => {
-        expect(employee.name).toEqual(name)
+        expect(employee.getName()).toEqual(name)
     })
 
     it('Should get an employee ID', () => {
