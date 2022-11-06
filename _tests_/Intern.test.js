@@ -1,12 +1,11 @@
 const Intern = require('../lib/Intern')
+const intern = new Intern('Kyle', 2094, 'kyle@test.com', 'UW Madison')
 
 //Arrange 
 const name = intern.name
 const id = intern.id
 const email = intern.email
-
-//Act
-const intern = new Intern(name, id, email, school)
+const school = intern.school
 
 //Assert
 describe('Creates an Itern object', () => {
@@ -16,7 +15,7 @@ describe('Creates an Itern object', () => {
     })
 
     it('Should get an Itern ID', () => {
-        expect(intern.ID).toEqual(id)
+        expect(intern.id).toEqual(id)
     })
 
     it('Should get an Itern email', () => {
@@ -24,7 +23,7 @@ describe('Creates an Itern object', () => {
     })
 
     it('Should have the correct role', () => {
-        expect(intern.role).toEqual("Intern")
+        expect(intern.getRole()).toEqual("Intern")
     })
 
     it('Should have the correct school', () => {

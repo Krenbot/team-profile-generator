@@ -1,12 +1,11 @@
 const Manager = require('../lib/Manager')
+const manager = new Manager('Tim', 2574, 'tim@test.com', 5533)
 
 //Arrange 
 const name = manager.name
 const id = manager.id
 const email = manager.email
-
-//Act
-const manager = new Manager(name, id, email, officeNumber)
+const officeNumber = manager.officeNumber
 
 //Assert
 describe('Creates an Engineer object', () => {
@@ -16,15 +15,15 @@ describe('Creates an Engineer object', () => {
     })
 
     it('Should get an manager ID', () => {
-        expect(manager.ID).toEqual(id)
+        expect(manager.id).toEqual(id)
     })
 
     it('Should get an manager email', () => {
-        expect(manager.name).toEqual(email)
+        expect(manager.email).toEqual(email)
     })
 
     it('Should have the correct role', () => {
-        expect(manager.role).toEqual("Manager")
+        expect(manager.getRole()).toEqual("Manager")
     })
 
     it('Should have the correct office number', () => {

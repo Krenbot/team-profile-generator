@@ -1,12 +1,11 @@
 const Engineer = require('../lib/Engineer')
+const engineer = new Engineer('Billy', 3207, 'billy@test.com', 'https://github.com/test')
 
 //Arrange 
 const name = engineer.name
 const id = engineer.id
 const email = engineer.email
-
-//Act
-const engineer = new Engineer(name, id, email, github)
+const github = engineer.github
 
 //Assert
 describe('Creates an Engineer object', () => {
@@ -16,18 +15,18 @@ describe('Creates an Engineer object', () => {
     })
 
     it('Should get an Engineer ID', () => {
-        expect(engineer.ID).toEqual(id)
+        expect(engineer.id).toEqual(id)
     })
 
     it('Should get an Engineer email', () => {
-        expect(engineer.name).toEqual(email)
+        expect(engineer.email).toEqual(email)
     })
 
     it('Should have the correct role', () => {
-        expect(engineer.role).toEqual("Engineer")
+        expect(engineer.getRole()).toEqual("Engineer")
     })
 
     it('Should have the correct github', () => {
-        expect(engineer.role).toEqual(github)
+        expect(engineer.github).toEqual(github)
     })
 })
