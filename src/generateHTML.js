@@ -10,8 +10,4 @@ const generateIntern = function () {
 
 }
 
-
-
-
-
 // module.exports = generateHTML

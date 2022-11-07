@@ -1,10 +1,11 @@
+//Arrange
 const Employee = require('../lib/Employee')
-const employee = new Employee('Jeff', 5459, 'jeff@test.com')
+const name = 'Jeff'
+const id = 5459
+const email = 'jeff@test.com'
 
-//Arrange 
-const name = employee.getName()
-const id = employee.getId()
-const email = employee.getEmail()
+//Act
+const employee = new Employee(name, id, email)
 
 //Assert
 describe('Creates an employee object', () => {
