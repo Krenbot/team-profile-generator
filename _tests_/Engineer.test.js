@@ -6,7 +6,7 @@ const email = 'billy@test.com'
 const github = 'https://github.com/test'
 
 //Act
-const engineer = new Engineer()
+const engineer = new Engineer(name, id, email, github)
 
 //Assert
 describe('Creates an Engineer object', () => {
