@@ -56,7 +56,7 @@ const inqEngineer = () => {
             message: 'Enter the ENGINEER\'S GitHub:'
         }
     ])
-    //Push to employee array
+        //Push to employee array
         .then((info) => {
             let engineer = new Engineer(info.name, info.id, info.email, info.github)
             employees.push(engineer)
@@ -85,7 +85,7 @@ const inqIntern = () => {
             message: 'Enter the INTERN\'S school:'
         }
     ])
-    //Push to employee array
+        //Push to employee array
         .then((info) => {
             let intern = new Intern(info.name, info.id, info.email, info.school)
             employees.push(intern)
@@ -105,9 +105,9 @@ const promptChoices = () => {
         .then((info) => {
             console.log(info)
             if (info.choices === 'Intern') {
-                //CALL INTERN FUNCTION HERE
+                inqIntern()
             } else if (info.choices === 'Engineer') {
-                //CALL ENGINEER FUNCTION HERE
+                inqEngineer();
             } else {
                 return
             }
