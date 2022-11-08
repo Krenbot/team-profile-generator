@@ -23,11 +23,11 @@ describe('Creates an Engineer object', () => {
         expect(manager.email).toEqual(email)
     })
 
-    it('Should have the correct role', () => {
-        expect(manager.getRole()).toEqual("Manager")
-    })
-
     it('Should have the correct office number', () => {
         expect(manager.officeNumber).toEqual(officeNumber)
+    })
+
+    it('Should have the correct role', () => {
+        expect(manager.getRole()).toEqual("Manager")
     })
 })

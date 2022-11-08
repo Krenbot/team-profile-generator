@@ -23,11 +23,11 @@ describe('Creates an Engineer object', () => {
         expect(engineer.email).toEqual(email)
     })
 
-    it('Should have the correct role', () => {
-        expect(engineer.getRole()).toEqual("Engineer")
-    })
-
     it('Should have the correct github', () => {
         expect(engineer.github).toEqual(github)
+    })
+    
+    it('Should have the correct role', () => {
+        expect(engineer.getRole()).toEqual("Engineer")
     })
 })

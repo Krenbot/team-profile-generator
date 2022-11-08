@@ -26,5 +26,3 @@ describe('Creates an employee object', () => {
         expect(employee.getRole()).toEqual("Employee")
     })
 })
-
-'Tim', 2574, 'tim@test.com', 5533

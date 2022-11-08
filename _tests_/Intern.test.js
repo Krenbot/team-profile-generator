@@ -23,11 +23,11 @@ describe('Creates an Itern object', () => {
         expect(intern.email).toEqual(email)
     })
 
-    it('Should have the correct role', () => {
-        expect(intern.getRole()).toEqual("Intern")
-    })
-
     it('Should have the correct school', () => {
         expect(intern.school).toEqual(school)
+    })
+
+    it('Should have the correct role', () => {
+        expect(intern.getRole()).toEqual("Intern")
     })
 })
