@@ -1,11 +1,12 @@
+//Arrange
 const Manager = require('../lib/Manager')
-const manager = new Manager('Tim', 2574, 'tim@test.com', 5533)
+const name = 'Tim'
+const id = 2574
+const email = 'tim@test.com'
+const officeNumber = 5533
 
-//Arrange 
-const name = manager.name
-const id = manager.id
-const email = manager.email
-const officeNumber = manager.officeNumber
+//Act
+const manager = new Manager(name, id, email, officeNumber)
 
 //Assert
 describe('Creates an Engineer object', () => {

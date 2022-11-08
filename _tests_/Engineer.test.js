@@ -1,11 +1,12 @@
-const Engineer = require('../lib/Engineer')
-const engineer = new Engineer('Billy', 3207, 'billy@test.com', 'https://github.com/test')
-
 //Arrange 
-const name = engineer.name
-const id = engineer.id
-const email = engineer.email
-const github = engineer.github
+const Engineer = require('../lib/Engineer')
+const name = 'Billy'
+const id = 3207
+const email = 'billy@test.com'
+const github = 'https://github.com/test'
+
+//Act
+const engineer = new Engineer()
 
 //Assert
 describe('Creates an Engineer object', () => {

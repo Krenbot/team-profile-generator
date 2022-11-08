@@ -1,11 +1,12 @@
-const Intern = require('../lib/Intern')
-const intern = new Intern('Kyle', 2094, 'kyle@test.com', 'UW Madison')
-
 //Arrange 
-const name = intern.name
-const id = intern.id
-const email = intern.email
-const school = intern.school
+const Intern = require('../lib/Intern')
+const name = 'Kyle'
+const id = 2094
+const email = 'kyle@test.com'
+const school = 'UW-Madison'
+
+//Act
+const intern = new Intern(name, id, email, school)
 
 //Assert
 describe('Creates an Itern object', () => {
