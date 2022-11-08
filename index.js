@@ -36,6 +36,64 @@ const inqManager = () => {
         })
 }
 
+const inqEngineer = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter ENGINEER name:',
+        }, {
+            type: 'input',
+            name: 'id',
+            message: "Enter the ENGINEER\'S ID #:",
+        }, {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the ENGINEER\'S e-mail:',
+        }, {
+            type: 'input',
+            name: 'github',
+            message: 'Enter the ENGINEER\'S GitHub:'
+        }
+    ])
+    //Push to employee array
+        .then((info) => {
+            let engineer = new Engineer(info.name, info.id, info.email, info.github)
+            employees.push(engineer)
+            console.log(engineer)
+            promptChoices()
+        })
+}
+
+const inqIntern = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter INTERN name:',
+        }, {
+            type: 'input',
+            name: 'id',
+            message: "Enter the INTERN\'S ID #:",
+        }, {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the INTERN\'S e-mail:',
+        }, {
+            type: 'input',
+            name: 'school',
+            message: 'Enter the INTERN\'S school:'
+        }
+    ])
+    //Push to employee array
+        .then((info) => {
+            let intern = new Intern(info.name, info.id, info.email, info.school)
+            employees.push(intern)
+            console.log(intern)
+            promptChoices()
+        })
+}
+
 const promptChoices = () => {
     return inquirer.prompt([{
         type: 'list',
@@ -56,24 +114,6 @@ const promptChoices = () => {
         })
 }
 
-const inqEngineer = () => {
-//name, id, email, github
-
-//Push to employee array
-
-}
-
-const inqIntern = () => {
-//name, id, email, school
-
-//Push to employee array
-
-}
-
-//Send Array to HTML
-
-//Create HTML for individual roles
-
 function writeToFile(fileName, data) {
     fs.writeFileSync(
         `./dist/${fileName}`, data)
@@ -81,3 +121,5 @@ function writeToFile(fileName, data) {
 
 // Function call to initialize app
 inqManager();
+inqEngineer();
+inqIntern();
