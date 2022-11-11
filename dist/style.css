@@ -1,20 +1,38 @@
-
 header {
     text-align: center;
     font-size: 50px;
     height: 100px;
     padding: 30px;
     background-color: red;
-    color:aliceblue;
+    color: aliceblue;
 }
- 
-.card-header{
+
+.card-header {
     color: white;
     background-color: blue;
 }
 
-h2, h4 {
+.card {
+    background-color: lightblue;
+    box-shadow: 10px 10px 10px gray;
+}
+
+p {
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+
+    padding: 10%;
+}
+
+i{
+    margin-right: 15px;
+}
+
+h2,
+h4 {
     text-align: left;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
