@@ -119,6 +119,14 @@ function writeToFile(fileName, data) {
         `./dist/${fileName}`, data)
 }
 
+
+// function init() {
+//     return inquirer.prompt(questions)
+//         .then((response) => {
+//             writeToFile('readme.md', generateMarkdown(response))
+//         })
+// }
+
 // Function call to initialize app
 inqManager();
 inqEngineer();
