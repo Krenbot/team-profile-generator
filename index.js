@@ -31,7 +31,6 @@ const inqManager = () => {
         .then((info) => {
             let manager = new Manager(info.name, info.id, info.email, info.officeNumber)
             employees.push(manager)
-            console.log(manager)
             promptChoices()
         })
 }
@@ -60,7 +59,6 @@ const inqEngineer = () => {
         .then((info) => {
             let engineer = new Engineer(info.name, info.id, info.email, info.github)
             employees.push(engineer)
-            console.log(engineer)
             promptChoices()
         })
 }
@@ -89,11 +87,11 @@ const inqIntern = () => {
         .then((info) => {
             let intern = new Intern(info.name, info.id, info.email, info.school)
             employees.push(intern)
-            console.log(intern)
             promptChoices()
         })
 }
 
+//Inquirer Prompt for adding more employees
 const promptChoices = () => {
     return inquirer.prompt([{
         type: 'list',
@@ -114,20 +112,15 @@ const promptChoices = () => {
         })
 }
 
-function writeToFile(fileName, data) {
+function writeToFile(data) {
     fs.writeFileSync(
-        `./dist/${fileName}`, data)
+        `./dist/index.html`, data, (err) => {
+            if (err) throw err;
+        })
 }
-
-
-// function init() {
-//     return inquirer.prompt(questions)
-//         .then((response) => {
-//             writeToFile('readme.md', generateMarkdown(response))
-//         })
-// }
 
 // Function call to initialize app
 inqManager();
 inqEngineer();
 inqIntern();
+writeToFile();
