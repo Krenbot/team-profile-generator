@@ -1,3 +1,7 @@
+*{
+    /* width: fit-content; */
+}
+
 header {
     text-align: center;
     font-size: 50px;
@@ -15,6 +19,7 @@ header {
 .card {
     background-color: lightblue;
     box-shadow: 10px 10px 10px gray;
+    width: 25%;
 }
 
 p {
@@ -22,11 +27,11 @@ p {
     border-width: 2px;
     border-style: solid;
     border-color: grey;
-
-    padding: 10%;
+    padding: 6%;
+    margin-bottom: 0;
 }
 
-i{
+i {
     margin-right: 15px;
 }
 
