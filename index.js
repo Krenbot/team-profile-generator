@@ -4,6 +4,7 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const generateHTML = require('./src/generateHTML')
+// const generateHTML = require('./src/generateHTML')
 
 let employees = [];
 
@@ -113,9 +114,9 @@ const inqIntern = () => {
         })
 }
 
-function writeToFile(data) {
+function writeToFile(employees) {
     fs.writeFileSync(
-        `./dist/index.html`, data, (err) => {
+        `./dist/index.html`, generateHTML(employees), 'utf-8', (err) => {
             if (err) throw err;
         })
 }
