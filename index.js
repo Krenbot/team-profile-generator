@@ -120,4 +120,7 @@ function writeToFile(employees) {
 
 // Function call to initialize app
 inqManager();
-writeToFile();
+
+function init()
+
+// writeToFile();
