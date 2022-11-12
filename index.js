@@ -32,6 +32,7 @@ const inqManager = () => {
             let manager = new Manager(info.name, info.id, info.email, info.officeNumber)
             employees.push(manager)
             promptChoices()
+            console.log(manager.email)
         })
 }
 
