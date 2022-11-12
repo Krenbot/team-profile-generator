@@ -42,8 +42,4 @@ const generateIntern = function (employeeData) {
 </article>`
 }
 
-generateManager();
-generateEngineer();
-generateIntern();
-
-module.exports = generateHTML
+module.exports = {generateManager, generateEngineer, generateIntern}

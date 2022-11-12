@@ -111,16 +111,16 @@ const inqIntern = () => {
         })
 }
 
-function writeToFile(employees) {
-    fs.writeFileSync(
-        `./dist/index.html`, generateHTML(employees), 'utf-8', (err) => {
-            if (err) throw err;
-        })
-}
+// function writeToFile(employees) {
+//     fs.writeFileSync(
+//         `./dist/index.html`, generateHTML(employees), 'utf-8', (err) => {
+//             if (err) throw err;
+//         })
+// }
 
 // Function call to initialize app
 inqManager();
 
-function init()
+// function init()
 
 // writeToFile();
