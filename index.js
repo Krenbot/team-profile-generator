@@ -4,7 +4,6 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const generateHTML = require('./src/generateHTML')
-// const generateHTML = require('./src/generateHTML')
 
 let employees = [];
 
@@ -33,7 +32,6 @@ const inqManager = () => {
             let manager = new Manager(info.name, info.id, info.email, info.officeNumber)
             employees.push(manager)
             promptChoices()
-            console.log(manager.email)
         })
 }
 
@@ -47,7 +45,6 @@ const promptChoices = () => {
     }
     ])
         .then((info) => {
-            console.log(info)
             if (info.choices === 'Intern') {
                 inqIntern()
             } else if (info.choices === 'Engineer') {
