@@ -50,6 +50,7 @@ const promptChoices = () => {
             } else if (info.choices === 'Engineer') {
                 inqEngineer();
             } else {
+                writeFile(employees)
                 return
             }
         })
@@ -111,6 +112,11 @@ const inqIntern = () => {
         })
 }
 
+
+function writeFile() {
+    fs.writeFileSync('./index.html', generateHTML(employees),'utf-8')
+}
+
 // function writeToFile(employees) {
 //     fs.writeFileSync(
 //         `./dist/index.html`, generateHTML(employees), 'utf-8', (err) => {
@@ -122,5 +128,4 @@ const inqIntern = () => {
 inqManager();
 
 // function init()
-
 // writeToFile();
