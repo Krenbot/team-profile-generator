@@ -1,13 +1,13 @@
-const generateManager = function (employees) {
+const generateManager = function (manager) {
     return `<article class="card col-3 m-3">
     <div class="card-header background">
-        <h2>${employees.manager.name}</h2>
+        <h2>${manager.name}</h2>
         <h4><i class="fas fa-coffee"></i>Manager</h4>
     </div>
     <div class="card-body">
-        <p>ID: ${employees.manager.id}</p>
-        <p>Email: <a href="mailto:${employees.manager.email}">${employees.manager.email}</a></p>
-        <p>Office Number:${employees.manager.officeNumber}</p>
+        <p>ID: ${manager.id}</p>
+        <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+        <p>Office Number:${manager.officeNumber}</p>
     </div>
 </article>`
 }
