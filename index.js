@@ -50,7 +50,8 @@ const promptChoices = () => {
             } else if (info.choices === 'Engineer') {
                 inqEngineer();
             } else {
-                writeFile(employees)
+                fs.writeFileSync('./dist/index.html', generateHTML(employees))
+                
                 return
             }
         })
@@ -112,20 +113,8 @@ const inqIntern = () => {
         })
 }
 
-
-function writeFile() {
-    fs.writeFileSync('./index.html', generateHTML(employees),'utf-8')
-}
-
-// function writeToFile(employees) {
-//     fs.writeFileSync(
-//         `./dist/index.html`, generateHTML(employees), 'utf-8', (err) => {
-//             if (err) throw err;
-//         })
-// }
-
-// Function call to initialize app
 inqManager();
 
-// function init()
-// writeToFile();
+// function writeFile() {
+//     fs.writeFileSync('./dist/index.html', generateHTML(employees), 'utf-8')
+// }
