@@ -32,6 +32,7 @@ const inqManager = () => {
             let manager = new Manager(info.name, info.id, info.email, info.officeNumber)
             employees.push(manager)
             promptChoices()
+
         })
 }
 
@@ -50,8 +51,7 @@ const promptChoices = () => {
             } else if (info.choices === 'Engineer') {
                 inqEngineer();
             } else {
-                fs.writeFileSync('./dist/index.html', generateHTML(employees))
-                
+                writeFile(employees)
                 return
             }
         })
@@ -113,8 +113,15 @@ const inqIntern = () => {
         })
 }
 
-inqManager();
+const writeFile = employees => {
+    fs.writeFile('./dist/index.html', employees, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team profile has been successfully created! Please check out the index.html")
+        }
+    })
+}; 
 
-// function writeFile() {
-//     fs.writeFileSync('./dist/index.html', generateHTML(employees), 'utf-8')
-// }
+inqManager();
