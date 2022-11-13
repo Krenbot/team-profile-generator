@@ -11,7 +11,7 @@ const generateTeam = team => {
     <div class="card-body">
         <p>ID: ${manager.getId()}</p>
         <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
-        <p>Office Number:${manager.getOfficeNumber()}</p>
+        <p>Office Number: ${manager.getOfficeNumber()}</p>
     </div>
 </article>`
     }
