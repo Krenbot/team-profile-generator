@@ -5,13 +5,13 @@ const generateTeam = team => {
     const generateManager = manager => {
         return `<article class="card col-3 m-3">
     <div class="card-header background">
-        <h2>${manager.name()}</h2>
+        <h2>${manager.getName()}</h2>
         <h4><i class="fas fa-coffee"></i>Manager</h4>
     </div>
     <div class="card-body">
-        <p>ID: ${manager.id()}</p>
-        <p>Email: <a href="mailto:${manager.Email()}">${manager.Email()}</a></p>
-        <p>Office Number:${manager.OfficeNumber()}</p>
+        <p>ID: ${manager.getId()}</p>
+        <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
+        <p>Office Number:${manager.getOfficeNumber()}</p>
     </div>
 </article>`
     }
@@ -19,13 +19,13 @@ const generateTeam = team => {
     const generateEngineer = function (employeeData) {
         return `<article class="card col-3 m-3">
             <div class="card-header background">
-                <h2>${employeeData.name}</h2>
+                <h2>${employeeData.getName()}</h2>
                 <h4><i class="fa-solid fa-glasses"></i>Engineer</h4>
             </div>
             <div class="card-body">
-                <p>ID: ${employeeData.id}</p>
-                <p>Email: <a href="mailto:${employeeData.email}">${employeeData.email}</a></p>
-                <p>GitHub: <a href="${employeeData.github}">${employeeData.github}</a></p>
+                <p>ID: ${employeeData.getId()}</p>
+                <p>Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></p>
+                <p>GitHub: <a href="${employeeData.getGithub()}">${employeeData.getGithub()}</a></p>
             </div>
         </article>`
     }
@@ -33,18 +33,18 @@ const generateTeam = team => {
     const generateIntern = function (employeeData) {
         return `<article class="card col-3 m-3">
     <div class="card-header background">
-        <h2>${employeeData.name}</h2>
+        <h2>${employeeData.getName()}</h2>
         <h4><i class="fa-solid fa-user-graduate"></i>Intern</h4>
     </div>
     <div class="card-body">
-        <p>ID: ${employeeData.id}</p>
-        <p>Email: <a href="mailto:${employeeData.email}">${employeeData.email}</a></p>
-        <p>School: ${employeeData.school}</p>
+        <p>ID: ${employeeData.getId()}</p>
+        <p>Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></p>
+        <p>School: ${employeeData.getSchool()}</p>
     </div>
 </article>`
     }
-
     const html = []
+
     html.push(team
         .filter(employees => employees.getRole() === 'Manager')
         .map(manager => generateManager(manager))

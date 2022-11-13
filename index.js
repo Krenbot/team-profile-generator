@@ -114,7 +114,7 @@ const inqIntern = () => {
 }
 
 const writeFile = employees => {
-    fs.writeFile('./dist/index.html', employees, err => {
+    fs.writeFile('./dist/index.html', generateHTML(employees), err => {
         if (err) {
             console.log(err);
             return;
@@ -122,6 +122,6 @@ const writeFile = employees => {
             console.log("Your team profile has been successfully created! Please check out the index.html")
         }
     })
-}; 
+};
 
 inqManager();
